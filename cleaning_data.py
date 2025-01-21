@@ -1,3 +1,5 @@
+
+
 import statistics
 import pandas as pd
 #import matplotlib.pyplot as plt
@@ -18,9 +20,21 @@ data.to_csv(new_file, index=False)
 
 print("Done! The the clean file is named:", new_file)
 
+#Define non-numeric columns
 non_numeric = ['Arabian Sea', 'corals present']
 
-stats_dictionary = {}
+#Create dictionary
+statistics_dictionary = {}
+
+for col in data.columns:
+    if col not in non_numeric:
+        data_statistics = data[col]
+        
+        statistics_dictionary[col] = {
+        
+        
+        
+        }
 
 ##########################################################
 

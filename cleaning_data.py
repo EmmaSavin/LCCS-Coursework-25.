@@ -1,5 +1,4 @@
 
-
 import statistics
 import pandas as pd
 #import matplotlib.pyplot as plt
@@ -38,15 +37,4 @@ for col in data.columns:
 
 ##########################################################
 
-filename = 'clean_data.csv'
-
-csvfile = open('clean_data.csv', "r")
-df = pd.pandas.read_csv('clean_data.csv')
-print("File Opened")
-with open('clean_data.csv', 'r') as filename:
-    csv_reader = pd.pandas.read_csv('clean_data.csv')
-    for column in csv_reader:
-        print(column[0], column[1], column[2], column[3], column[4])
-        
-csvfile.close()
 print("File closed")

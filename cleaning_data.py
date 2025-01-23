@@ -41,7 +41,7 @@ for col in data.columns: #Checks each column
             'Median': data_stats.median(), #median of col
             'Range': data_stats.max() - data_stats.min() #range of col
         }
-#Changing statistics dictionary into Data Frame
+#Changing statistics dictionary into Data Frame to display data in orderly format
 stats_df = pd.DataFrame.from_dict(statistics_dictionary)
         
 print(stats_df)

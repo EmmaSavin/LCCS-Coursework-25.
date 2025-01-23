@@ -46,4 +46,25 @@ stats_df = pd.DataFrame.from_dict(statistics_dictionary)
         
 print(stats_df)
 
+#########
+#Graphing using Plotly
+
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from plotly import data
+
+df = data.sea_data()
+fig = make_subplots(rows=1, cols=2, shared_yaxes=True)
+fig.add_trace(
+    go.Bar(x=df.nation, y=df.gold, name="Salinity", marker=dict(cornerradius=30)), 1, 1
+)
+fig.add_trace(
+    go.Bar(x=df.nation, y=df.silver, name="Temperature", marker=dict(cornerradius="30%")),
+    1,
+    2,
+)
+
+
+fig.show()
+
 ##########################################################

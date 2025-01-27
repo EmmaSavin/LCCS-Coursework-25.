@@ -19,7 +19,7 @@ new_file = 'clean_data.csv'
 data.to_csv(new_file, index=False)
 
 #Change all data to numerical from strings
-numeric_columns = ['salinity', 'January_temp', 'June_temp']
+numeric_columns = ['January_salinity', 'June_Salinity', 'January_temp', 'June_temp']
 for col in numeric_columns:
     data[col] = pd.to_numeric(data[col], errors='coerce')
     

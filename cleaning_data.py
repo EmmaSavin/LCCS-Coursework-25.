@@ -1,14 +1,12 @@
 
-#################################################################
-#import statistics
+##########################################################
+
 import pandas as pd
-#import matplotlib.pyplot as plt
-#import csv
 
 # Set the file path
 original_file_path = 'raw_data.csv'
 
-# Read the file using Pandas(pd)
+# Read the file using a Python Data Analysis (pandas)
 data = pd.read_csv(original_file_path)
 
 #Remove special characters like *
@@ -19,7 +17,7 @@ new_file = 'clean_data.csv'
 data.to_csv(new_file, index=False)
 
 #Change all data to numerical from strings
-numeric_columns = ['January_salinity', 'June_Salinity', 'January_temp', 'June_temp']
+numeric_columns = ['January_salinity', 'June_salinity', 'January_temp', 'June_temp']
 for col in numeric_columns:
     data[col] = pd.to_numeric(data[col], errors='coerce')
     
@@ -48,23 +46,27 @@ print(stats_df)
 
 #########
 #Graphing using Plotly
-
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-from plotly import data
+import pandas as pd
 
-df = data.sea_data()
-fig = make_subplots(rows=1, cols=2, shared_yaxes=True)
-fig.add_trace(
-    go.Bar(x=df.nation, y=df.gold, name="Salinity", marker=dict(cornerradius=30)), 1, 1
-)
-fig.add_trace(
-    go.Bar(x=df.nation, y=df.silver, name="Temperature", marker=dict(cornerradius="30%")),
-    1,
-    2,
-)
+df = data.dropna()
 
+fig = go.Figure(
+    data=[
+        go.Bar(x=df.January_salinity, name="June Salinity"),
+        go.Bar(x=df.June_salinity, name="June Salinity"),
+        go.Bar(x=df.January_temp, name="January Temperature"),
+        go.Bar(x=df.June_temp, name="June Temperature")
+    ],
+    layout=dict(
+        title="Salinity and Temperature in January and June",
+        barmode='group',
+        bargap=0.3,
+        bargroupgap=0.1,
+    ),
+)
 
 fig.show()
+
 
 ##########################################################

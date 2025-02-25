@@ -56,9 +56,10 @@ fig = go.Figure(
         barmode='group',
         bargap=0.3,
         bargroupgap=0.1,
+        yaxis_title="Temperature and Salinity",
+        xaxis=dict(showticklabels=False)
     ),
 )
 
 fig.show()
 
-print("Done! The cleaned file is saved as:", new_file)

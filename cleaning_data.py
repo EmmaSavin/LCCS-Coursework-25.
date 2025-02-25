@@ -1,7 +1,6 @@
-
-##########################################################
-
 import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
 
 # Set the file path
 original_file_path = 'raw_data.csv'
@@ -44,19 +43,13 @@ stats_df = pd.DataFrame.from_dict(statistics_dictionary)
         
 print(stats_df)
 
-#########
-#Graphing using Plotly
-import plotly.graph_objects as go
-import pandas as pd
-
-df = data.dropna()
 
 fig = go.Figure(
     data=[
-        go.Bar(x=df.January_salinity, name="June Salinity"),
-        go.Bar(x=df.June_salinity, name="June Salinity"),
-        go.Bar(x=df.January_temp, name="January Temperature"),
-        go.Bar(x=df.June_temp, name="June Temperature")
+        go.Bar(x=data.index, y=data['January_salinity'], name="January Salinity"),
+        go.Bar(x=data.index, y=data['June_salinity'], name="June Salinity"),
+        go.Bar(x=data.index, y=data['January_temp'], name="January Temperature"),
+        go.Bar(x=data.index, y=data['June_temp'], name="June Temperature"),
     ],
     layout=dict(
         title="Salinity and Temperature in January and June",
@@ -68,5 +61,4 @@ fig = go.Figure(
 
 fig.show()
 
-
-##########################################################
+print("Done! The cleaned file is saved as:", new_file)

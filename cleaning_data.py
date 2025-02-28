@@ -43,23 +43,60 @@ stats_df = pd.DataFrame.from_dict(statistics_dictionary)
         
 print(stats_df)
 
-
+##############Scatter Plot###############
 fig = go.Figure(
     data=[
-        go.Bar(x=data.index, y=data['January_salinity'], name="January Salinity"),
-        go.Bar(x=data.index, y=data['June_salinity'], name="June Salinity"),
-        go.Bar(x=data.index, y=data['January_temp'], name="January Temperature"),
-        go.Bar(x=data.index, y=data['June_temp'], name="June Temperature"),
+        go.Scatter(x=data.index, y=data['January_salinity'], mode='markers', name="January Salinity"),
+        go.Scatter(x=data.index, y=data['June_salinity'], mode='markers', name="June Salinity"),
+        go.Scatter(x=data.index, y=data['January_temp'], mode='markers', name="January Temperature"),
+        go.Scatter(x=data.index, y=data['June_temp'], mode='markers', name="June Temperature"),
     ],
     layout=dict(
         title="Salinity and Temperature in January and June",
-        barmode='group',
-        bargap=0.3,
-        bargroupgap=0.1,
         yaxis_title="Temperature and Salinity",
+        xaxis_title="Months (January and June)",
         xaxis=dict(showticklabels=False)
     ),
 )
 
 fig.show()
 
+
+###############Bar Chart for temp##############
+
+import plotly.express as px
+import pandas as pd
+
+df = pd.read_csv("clean_data.csv");
+
+df_long = pd.melt(df, value_vars=["January_temp", "June_temp"],
+                  var_name="month", value_name="temperature")
+
+
+# Replace column names to make it more readable
+df_long['month'] = df_long['month'].replace({"January_temp": "January", "June_temp": "June"})
+
+df_long['months'] = df_long.index
+
+fig = px.bar(df_long, x="months", y="temperature", color="month", barmode="group", height=400)
+
+fig.show()
+
+###############Bar Chart for salinity##############
+
+import plotly.express as px
+import pandas as pd
+
+df = pd.read_csv("clean_data.csv");
+
+df_long = pd.melt(df, value_vars=["January_salinity", "June_salinity"],
+                  var_name="month", value_name="salinity")
+
+# Replace column names to make it more readable
+df_long['month'] = df_long['month'].replace({"January_salinity": "January", "June_salinity": "June"})
+
+df_long['months'] = df_long.index
+
+fig = px.bar(df_long, x="months", y="salinity", color="month", barmode="group", height=400)
+
+fig.show()

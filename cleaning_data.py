@@ -52,7 +52,7 @@ fig = go.Figure(
         go.Scatter(x=data.index, y=data['June_temp'], mode='markers', name="June Temperature"),
     ],
     layout=dict(
-        title="Salinity and Temperature in January and June",
+        title="Scatter Plot: Salinity and Temperature in January and June",
         yaxis_title="Temperature and Salinity",
         xaxis_title="Months (January and June)",
         xaxis=dict(showticklabels=False)
@@ -79,7 +79,9 @@ df_long['month'] = df_long['month'].replace({"January_temp": "January", "June_te
 df_long['months'] = df_long.index
 
 fig = px.bar(df_long, x="months", y="temperature", color="month", barmode="group", height=400)
-
+   
+fig.update_layout(title = "Bar Chart: Temperatures in January and June")   
+   
 fig.show()
 
 ###############Bar Chart for salinity##############
@@ -98,5 +100,7 @@ df_long['month'] = df_long['month'].replace({"January_salinity": "January", "Jun
 df_long['months'] = df_long.index
 
 fig = px.bar(df_long, x="months", y="salinity", color="month", barmode="group", height=400)
+
+fig.update_layout(title = "Bar Chart: Salinity Levels in January and June")
 
 fig.show()

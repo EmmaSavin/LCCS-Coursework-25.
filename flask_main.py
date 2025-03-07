@@ -18,7 +18,10 @@ def home():
 #Route for second page
 @app.route('/second-page')
 def second_page():
-    return render_template("second-page.html")
+    return render_template("second-page.html",
+                           scatter_plot_html=scatter_plot_html,
+                           temp_barchart_html=temp_barchart_html,
+                           salinity_barchart_html=salinity_barchart_html)
 
 #Route for third page
 @app.route('/third-page')
@@ -44,6 +47,7 @@ def sixth_page():
 @app.route('/seventh-page')
 def seventh_page():
     return render_template("seventh-page.html")
+
 
 # Run the app (this starts the server)
 if __name__ == '__main__':

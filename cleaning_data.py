@@ -104,3 +104,7 @@ fig = px.bar(df_long, x="months", y="salinity", color="month", barmode="group", 
 fig.update_layout(title = "Bar Chart: Salinity Levels in January and June")
 
 fig.show()
+
+
+
+

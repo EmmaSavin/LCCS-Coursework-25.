@@ -130,16 +130,18 @@ _________________FOURTH PAGE__________________
 <html>
     <head>
 
-
     </head>
+
 
     <body>
         <h1>Plan and Design</h1>
-        <h2>Flow Chart:</h2>
-        <img src="flowchart.jpg" width="60%">
+	    <h2>Flow Chart:</h2>
+	    <img src="{{url_for('static', filename = 'flowchart.jpg') }}" width="60%">
         <p>Flowchart created using draw.io</p>
        
     </body>
+
+
 
 
 </html>
@@ -181,9 +183,9 @@ _________________SEVENTH PAGE__________________
 
     <body>
         <h1>References:</h1>
-        <p><a href = "....">Source 1: Dataset</a></p>
-        <p><a href = "....">Source 2</a></p>
-        <p><a href = "....">Source 3</a></p>
+	    <p><a href = "https://www.kaggle.com/datasets/natalialimanska/corals-worldwide-distribution">Source 1: Dataset</a></p>
+	    <p><a href = "....">Source 2</a></p>
+	    <p><a href = "....">Source 3</a></p>
         <p><a href = "....">Source 4</a></p>
        
     </body>

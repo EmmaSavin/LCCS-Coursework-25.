@@ -1,4 +1,4 @@
-___________________ HOME PAGE__________________
+___________________ HOME/INDEX PAGE______________
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,32 +11,179 @@ ___________________ HOME PAGE__________________
         <h1>Coursework Project 2025</h1>
         <h2>Leaving Cert Computer Science</h2>
         <p><b>Higher Level</b></p>
-        <p>My project is on: {{cwinfo}}</p>
+        <p>My coursework project is on: {{cwinfo}}</p>
+
 
         <h3><i>CONTENTS:</i></h3>
         <ol>
          <li><!--Link to meeting the brief-->
-            <p><a href = "second-page.html">Meeting the Brief</a></p></li>
+            <p><a href = "second-page">Meeting the Brief</a></p></li>
          <li><!--Link to investigation-->
-            <p><a href = "third-page.html">Investigation</a></p></li>
+            <p><a href = "third-page">Investigation</a></p></li>
          <li><!--Link to Plan and Design-->
-            <p><a href = "fourth-page.html">Plan and Design</a></p></li>
+            <p><a href = "fourth-page">Plan and Design</a></p></li>
          <li><!--Link to create-->
-            <p><a href = "fifth-page.html">Create</a></p></li>
+            <p><a href = "fifth-page">Create</a></p></li>
          <li><!--Link to evaluation-->
-            <p><a href = "sixth-page.html">Evaluation</a></p></li>
+            <p><a href = "sixth-page">Evaluation</a></p></li>
          <li><!--Link to references-->
-            <p><a href = "seventh-page.html">References</a></p></li>
+            <p><a href = "seventh-page">References</a></p></li>
         </ol>
-
-
-        
-
 
     </body>
 
 
 </html>
 
-
 _________________SECOND PAGE__________________
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting The Brief</title>
+</head>
+
+
+<body>
+    <h1>Meeting the Brief</h1>
+    <h2>Research:</h2>
+    <p>To aid me with creating this brief I researched and analysed different websites that have interactive informative systems. I looked at different database websites to find my chosen dataset and to simultaneously research on how interactive websites appear. </p>
+
+
+    <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
+    <div>{{ scatter_plot_html | safe }}</div>
+       
+    <h4>Bar Chart: Temperature in January and June</h4>
+    <div>{{ temp_barchart_html | safe }}</div>
+
+
+    <h4>Bar Chart: Salinity in January and June</h4>
+    <div>{{ salinity_barchart_html | safe }}</div>
+
+
+</body>
+
+
+</html>
+
+_________________THIRD PAGE__________________
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            line-height: 1.6;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Third Page</h1>
+    </header>
+    <div class="container">
+        <h2>This is the Third Page</h2>
+        <p>This is a simple HTML template for the third page of your Flask application. You can customize this page as needed.</p>
+        <p>Feel free to add more content, images, or links to other pages.</p>
+        <p><a href="/">Go back to Home</a></p>
+        <p><a href="/second-page">Go to Second Page</a></p>
+        <p><a href="/fourth-page">Go to Fourth Page</a></p>
+    </div>
+</body>
+</html>
+
+_________________FOURTH PAGE__________________
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+
+    <body>
+        <h1>Plan and Design</h1>
+        <h2>Flow Chart:</h2>
+        <img src="flowchart.jpg" width="60%">
+        <p>Flowchart created using draw.io</p>
+       
+    </body>
+
+
+</html>
+
+_________________FIFTH PAGE__________________
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Create</h1>
+       
+    </body>
+
+</html>
+
+_________________SIXTH PAGE__________________
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Evaluation</h1>
+       
+    </body>
+
+</html>
+
+_________________SEVENTH PAGE__________________
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>References:</h1>
+        <p><a href = "....">Source 1: Dataset</a></p>
+        <p><a href = "....">Source 2</a></p>
+        <p><a href = "....">Source 3</a></p>
+        <p><a href = "....">Source 4</a></p>
+       
+    </body>

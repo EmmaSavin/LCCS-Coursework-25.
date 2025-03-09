@@ -65,9 +65,6 @@ scatter_plot_html = scatter_plot_fig.to_html(full_html=False, include_plotlyjs="
 
 ###############Bar Chart for temp##############
 
-#import plotly.express as px
-#import pandas as pd
-
 df = pd.read_csv("clean_data.csv");
 
 df_long_temp = pd.melt(df, value_vars=["January_temp", "June_temp"],
@@ -83,10 +80,8 @@ temp_barchart_fig.update_layout(title = "Bar Chart: Temperatures in January and 
    
 temp_barchart_fig.show()
 temp_barchart_html = temp_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
-###############Bar Chart for salinity##############
 
-#import plotly.express as px
-#import pandas as pd
+###############Bar Chart for salinity##############
 
 df = pd.read_csv("clean_data.csv");
 
@@ -104,8 +99,7 @@ salinity_barchart_fig.show()
 salinity_barchart_html = salinity_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
 
 
-
-################FLASK###################
+################FLASK####################
 #Click on blue link outputted on screen
 #stop previous code. On the browser hold ctrl and click refresh to clear the cache
 

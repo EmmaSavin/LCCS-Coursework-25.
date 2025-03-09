@@ -105,12 +105,7 @@ salinity_barchart_html = salinity_barchart_fig.to_html(full_html=False, include_
 
 
 
-
-
-
-
-
-
+################FLASK###################
 #Click on blue link outputted on screen
 #stop previous code. On the browser hold ctrl and click refresh to clear the cache
 

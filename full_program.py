@@ -77,7 +77,13 @@ df_long_temp['months'] = df_long_temp.index
 
 temp_barchart_fig = px.bar(df_long_temp, x="months", y="temperature", color="month", barmode="group", height=400)
 temp_barchart_fig.update_layout(title = "Bar Chart: Temperatures in January and June")   
-   
+
+temp_barchart_fig.update_layout(
+    xaxis=dict(
+        tickvals=[]
+    )
+)
+
 temp_barchart_fig.show()
 temp_barchart_html = temp_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
 
@@ -94,6 +100,12 @@ df_long_salinity['months'] = df_long_salinity.index
 
 salinity_barchart_fig = px.bar(df_long_salinity, x="months", y="salinity", color="month", barmode="group", height=400)
 salinity_barchart_fig.update_layout(title = "Bar Chart: Salinity Levels in January and June")
+
+salinity_barchart_fig.update_layout(
+    xaxis=dict(
+        tickvals=[]
+    )
+)
 
 salinity_barchart_fig.show()
 salinity_barchart_html = salinity_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
@@ -112,7 +124,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     #define variables
-    cwinfo = "The salinity and temperature of the Arabian sea in January versus June."
+    cwinfo = "The salinity and temperature of the Arabian Sea in January versus June."
     
     #pass these onto the webpage (with a chance to rename them)
     return render_template("index.html", cwinfo=cwinfo)

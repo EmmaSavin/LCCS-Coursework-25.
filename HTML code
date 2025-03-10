@@ -321,11 +321,11 @@ _________________THIRD PAGE__________________
 <body>
     <div class="Container">
         <h1>Investigation</h1>
-    
+        <p>I have researched this project by using existing code I wrote in HTML earlier on in the year, I created a website on my favourite pizza. I am using the basic format of this code to create the report website in vscode.dev. I chose to use the flask platform in Thonny to bring my HTML page into my main Python code. I cleaned my data in Python using pandas. This took a few days to get working as the dirty data was not corresponding with the code. After removing the euro sign, my code worked as it had been making the column of integers involve a string. Once the code was free of errors, I then had a cleaned copy of my csv file.</p>
+
     </div>
 </body>
 </html>
-
 _________________FOURTH PAGE__________________
 <!DOCTYPE html>
 <html lang="en">
@@ -630,6 +630,7 @@ _________________SIXTH PAGE__________________
 </html>
 
 _________________SEVENTH PAGE__________________
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -726,9 +727,13 @@ _________________SEVENTH PAGE__________________
     <body>
         <h1>References:</h1>
 	    <p><a href = "https://www.kaggle.com/datasets/natalialimanska/corals-worldwide-distribution">Source 1: Dataset</a></p>
-	    <p><a href = "....">Source 2</a></p>
-	    <p><a href = "....">Source 3</a></p>
-        <p><a href = "....">Source 4</a></p>
+	    <p><a href = "https://www.w3schools.com/w3css/w3css_templates.asp">Source 2: CSS and HTML Templates</a></p>
+	    <p><a href = "https://plotly.com/python/">Source 3: Plotly Template</a></p>
+        <p><a href = "https://vscode.dev/">Source 4: Code editor</a></p>
+        <p><a href = "https://app.diagrams.net/">Source 5: Flowchart Creative Environment</a></p>
+        <p><a href = "...">Source 6:</a></p>
+        <p><a href = "...">Source 7:</a></p>
+        <p><a href = "...">Source 8:</a></p>
        
     </body>
 

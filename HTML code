@@ -1,9 +1,65 @@
 ___________________ HOME/INDEX PAGE______________
 <!DOCTYPE html>
-<html>
-    <head>
+<html<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Home Page</title>
 
-
+       <style>
+         h1 {
+             text-align: center;
+             text-decoration:underline;
+             font-size: 55px;
+             color: #F7EDE8;
+         }
+ 
+         h2 {
+             text-align: center;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+ 
+         img{
+             margin: 0 auto;
+             display: block;
+             max-width: 100%;
+             border-radius: 10px;
+         }
+         p{
+             color: #F7EDE8;
+             line-height: 30px;
+         }
+ 
+         .Container{
+             max-width: 600px;
+             margin:0 auto;
+             padding: 15px 60px;
+             background-color: rgb(85, 0, 0);
+             text-decoration: #F7EDE8;
+             border: black;
+             border-radius: 30px;
+         } 
+         body{
+             background-color:black;
+         }
+         button {
+             color: rgba(255, 0, 0, 0.897);
+             background-color: black;
+             line-height: 20px;
+             box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+             transition: all 200ms ease;
+         }
+ 
+         button:hover{
+             color: black;
+             background-color: rgba(255, 0, 0, 0.897);
+             cursor: pointer;
+         }
+         strong{
+             color: black;
+         }
+     </style>
     </head>
 
 
@@ -13,23 +69,23 @@ ___________________ HOME/INDEX PAGE______________
         <p><b>Higher Level</b></p>
         <p>My coursework project is on: {{cwinfo}}</p>
 
-
+      <div class="Container">
         <h3><i>CONTENTS:</i></h3>
         <ol>
          <li><!--Link to meeting the brief-->
-            <p><a href = "second-page">Meeting the Brief</a></p></li>
+            <p><a href = "second-page"><button>Meeting the Brief</button></a></p></li>
          <li><!--Link to investigation-->
-            <p><a href = "third-page">Investigation</a></p></li>
+            <p><a href = "third-page"><button>Investigation</button></a></p></li>
          <li><!--Link to Plan and Design-->
-            <p><a href = "fourth-page">Plan and Design</a></p></li>
+            <p><a href = "fourth-page"><button>Plan and Design</button></a></p></li>
          <li><!--Link to create-->
-            <p><a href = "fifth-page">Create</a></p></li>
+            <p><a href = "fifth-page"><button>Create</button></a></p></li>
          <li><!--Link to evaluation-->
-            <p><a href = "sixth-page">Evaluation</a></p></li>
+            <p><a href = "sixth-page"><button>Evaluation</button></a></p></li>
          <li><!--Link to references-->
-            <p><a href = "seventh-page">References</a></p></li>
+            <p><a href = "seventh-page"><button>References</button></a></p></li>
         </ol>
-
+      </div>
     </body>
 
 

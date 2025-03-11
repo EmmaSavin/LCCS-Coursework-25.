@@ -12,7 +12,7 @@ ___________________ HOME/INDEX PAGE______________
              text-decoration:underline;
              font-size: 55px;
              color: #F7EDE8;
-	     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	     font-family: Georgia, 'Times New Roman', Times, serif;
          }
  
          h2 {

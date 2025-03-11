@@ -323,7 +323,7 @@ _________________THIRD PAGE__________________
     <div class="Container">
         <h1>Investigation</h1>
         <p>I have researched this project by using existing code I wrote in HTML earlier on in the year, I created a website on my favourite pizza. I am using the basic format of this code to create the report website in vscode.dev. I chose to use the flask platform in Thonny to bring my HTML page into my main Python code. I cleaned my data in Python using pandas. This took a few days to get working as the dirty data was not corresponding with the code. After removing the euro sign, my code worked as it had been making the column of integers involve a string. Once the code was free of errors, I then had a cleaned copy of my csv file.</p>
-
+	<p>I chose Scatter plot: data distribution</p>
     </div>
 </body>
 </html>

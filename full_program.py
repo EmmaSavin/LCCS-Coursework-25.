@@ -162,7 +162,13 @@ def sixth_page():
 def seventh_page():
     return render_template("seventh-page.html")
 
+#Route for eighth page
+@app.route('/eighth-page')
+def eighth_page():
+    return render_template("eighth-page.html")
+
 
 # Run the app (this starts the server)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5022, debug=False)
+

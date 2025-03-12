@@ -524,7 +524,14 @@ _________________FIFTH PAGE__________________
 
 
     <body>
-        <h1>Create</h1>
+        <div class="Container">
+            <h1>Create</h1>
+    
+            <h2></h2>
+    
+            <h2>Test Plan and Log:</h2>
+            <img src="{{url_for('static', filename = 'testplan_log.jpg') }}" width="60%">
+        </div>
        
     </body>
 

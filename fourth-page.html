@@ -1,19 +1,104 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Fourth Page: Plan and Design</title>
 
+       <style>
+        h1 {
+            text-align: center;
+            text-decoration:underline;
+            font-size: 55px;
+            color: #F7EDE8;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: lighter;
+            color: #F7EDE8;
+        }
+
+        h3 {
+            text-align: left;
+            font-weight: lighter;
+            color: #F7EDE8;
+        }
+
+        p{
+            text-align: center;
+            font-weight: lighter;
+            color: #F7EDE8;
+        }
+
+        img{
+            margin: 0 auto;
+            display: block;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        p{
+            color: #F7EDE8;
+            line-height: 30px;
+        }
+
+        .Container{
+            max-width: 600px;
+            margin:0 auto;
+            padding: 15px 60px;
+            background-color: rgb(16, 7, 66);
+            text-decoration: #F7EDE8;
+            border: rgb(0, 0, 0);
+            border-radius: 30px;
+            color: #F7EDE8;
+        } 
+        body{
+            background-color:rgb(18, 2, 44);
+        }
+        button {
+            color: rgba(132, 189, 208, 0.897);
+            background-color: rgb(9, 20, 103);
+            line-height: 20px;
+            box-shadow: rgba(110, 113, 209, 0.386) 0px 8px 8px 0;
+            transition: all 200ms ease;
+        }
+
+        button:hover{
+            color: rgb(42, 209, 255);
+            background-color: rgb(96, 87, 178);
+            cursor: pointer;
+        }
+        strong{
+            color: rgb(252, 252, 252);
+        }
+
+        .Container ol {
+           list-style-position: inside;  
+           padding-left: 0;
+           margin: 0;
+       }
+
+       .Container li {
+           display: flex; 
+           align-items: center; 
+           margin-bottom: 20px; 
+       }
+       </style>
     </head>
 
 
     <body>
+    <div class="Container">
         <h1>Plan and Design</h1>
+
+	    <h2>Description of Design and Meeting the Requirements</h2>
+	    <p>For my coursework project, I have extracted a smaller sample of data from a large, raw data file on this topic. I used the systematic sampling extraction method to do this because I could not mix up the different types of data being collected as they all came from different seas. I manually extracted all of my data from the section containing data from the Arabian Sea only. I then used Python to clean the raw dataset, my program removed any uneccessary symbols in cells and entirely removed any empty columns. My program then creates a new, clean csv file which I can then use for the rest of my project. I will then use the Python module pandas to assist me in carrying out analytics on my data; find the mean, median, mode and range of the dataset. I will use Python data structures such as dictionaries to manage the data I will be analysing. Furthermore, I will use Plotly graphing libraries to create visual representations of my data in the form of graphs. I will have a scatter plot to show the data distribution of the salinity and temperature in both January and June. I will then create two separate bar charts dealing with the salinity and tempereature of both months separately. To tie all aspects together, I will create a web-based interface that provides information on my coursework project to the public and presents all of my data visualisations and findings in an interactive mode. </p>
+
 	    <h2>Flow Chart:</h2>
 	    <img src="{{url_for('static', filename = 'flowchart.jpg') }}" width="60%">
         <p>Flowchart created using draw.io</p>
-       
+    </div>
     </body>
 
-
-
-
 </html>
+

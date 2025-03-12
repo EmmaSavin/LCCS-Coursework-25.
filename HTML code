@@ -772,7 +772,7 @@ ______________________EIGHTH PAGE______________________
              border-radius: 30px;
              color: #F7EDE8;
          } 
-         
+
          body{
              background-color:rgb(18, 2, 44);
              color: white
@@ -816,17 +816,17 @@ ______________________EIGHTH PAGE______________________
 
     <form id="suggestions-form">
        
-        <label for="data">What data should be added to this website? (type a string)</label><br>
-        <input type="text" id="data" required><br><br>
+        <label for="Data">What other data should be added to this website? (Type a string)</label><br>
+        <input type="text" id="Data" required><br><br>
        
-        <label for="year">What date should this data come from? (type an integer)</label><br>
-        <input type="number" id="year" min="0" max="9999" required><br><br>
+        <label for="Month">What other month should this data come from? (Type an integer; 1-12 (Jan-Dec) )</label><br>
+        <input type="Number" id="Month" min="1" max="12" required><br><br>
        
-        <label for="reliability">What would you rate this data for reliability? (type a float)</label><br>
-        <input type="number" id="reliability" step="0.1" min="1.0" max="10.0" required><br><br>
+        <label for="Reliability">What would you rate this data for reliability? (Type a float; 0-10 )</label><br>
+        <input type="Number" id="Reliability" step="0.1" min="1.0" max="10.0" required><br><br>
        
-        <label for="opinion">Do you like this webpage?</label><br>
-        <select id="opinion" required>
+        <label for="Opinion">Do you like this webpage?</label><br>
+        <select id="Opinion" required>
             <option value="">Select Boolean Value</option>
             <option value="Y">True</option>
             <option value="N">False</option>
@@ -836,15 +836,15 @@ ______________________EIGHTH PAGE______________________
         <button type="button" onclick="clearData()">Delete past data</button>
     </form>
     <br>
-    <h2>Summary of submitted suggestions displayed</h2>
+    <h2>Summary of Submitted Suggestions:</h2>
    
     <table id="data-table">
         <thead>
             <tr>
-                <th>data</th>
-                <th>date</th>
-                <th>reliability</th>
-                <th>opinion</th>
+                <th>Data</th>
+                <th>Month</th>
+                <th>Reliability</th>
+                <th>Opinion</th>
             </tr>
         </thead>
        
@@ -856,17 +856,17 @@ ______________________EIGHTH PAGE______________________
    
     <script>
     function saveData() {
-        const data = document.getElementById('data').value;
-        const year = document.getElementById('year').value; // Fix: Changed 'date' to 'year' to match input ID
-        const reliability = document.getElementById('reliability').value; // Fix: Corrected the typo from 'reiability'
-        const opinion = document.getElementById('opinion').value; // Fix: Corrected the typo from 'permission'
+        const Data = document.getElementById('Data').value;
+        const Month = document.getElementById('Month').value; 
+        const Reliability = document.getElementById('Reliability').value; 
+        const Opinion = document.getElementById('Opinion').value; 
 
-        if (!data || !year || !reliability || !opinion) {
-            alert("Please fill in all fields.");
+        if (!Data || !Month || !Reliability || !Opinion) {
+            alert("Please fill in all fields!");
             return;
         }
 
-        const newData = { data, year, reliability, opinion };
+        const newData = { Data, Month, Reliability, Opinion };
 
         // Retrieve existing suggestions from localStorage, or initialize an empty array if none exists
         const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
@@ -895,10 +895,10 @@ ______________________EIGHTH PAGE______________________
             const row = document.createElement('tr'); // Fix: Corrected 'document.creatELement' to 'document.createElement'
 
             row.innerHTML = `
-                <td>${item.data}</td>
-                <td>${item.year}</td> <!-- Fix: Changed 'date' to 'year' to match object keys -->
-                <td>${item.reliability}</td>
-                <td>${item.opinion === 'Y' ? 'True' : 'False'}</td> <!-- Fix: Changed 'opionion' to 'opinion' -->
+                <td>${item.Data}</td>
+                <td>${item.Month}</td> 
+                <td>${item.Reliability}</td>
+                <td>${item.Opinion === 'Y' ? 'True' : 'False'}</td> 
             `;
 
             // Append the row to the table body
@@ -918,8 +918,4 @@ ______________________EIGHTH PAGE______________________
     </script>
 
 </body>
-</html>
-
-
-
 </html>

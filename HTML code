@@ -213,8 +213,8 @@ _________________SECOND PAGE__________________
 
 <body>
     <h1>Meeting the Brief</h1>
-    <h2>Research:</h2>
-    <p>To aid me with creating this brief I researched and analysed different websites that have interactive informative systems. I looked at different database websites to find my chosen dataset and to simultaneously research on how interactive websites appear. </p>
+    <h2>About my Project:</h2>
+    <p>My coursework project deals with measuring factors of the Arabian Sea during the months of January and June. The factors that I have chosen to include in my project are the temperature and the salinity of the sea. I will have to extract, clean and store data obtained in a csv file using Python. I will use Python modules such as pandas to carry out analytics on my data. Furthermore, I will use Plotly graphing libraries to create basic visualisations of my data in the form of graphs; each graph will represent different key aspects of the data. I will use Python data structures such as dictionaries to manage the data I will be analysing. Finally, I will create and develop a web-based interface that provides information on my coursework project and allows individuals to see my data visualisations and interact with the findings of my project.  </p>
 
     <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
     <div>{{ scatter_plot_html | safe }}</div>
@@ -322,9 +322,9 @@ _________________THIRD PAGE__________________
 <body>
     <div class="Container">
         <h1>Investigation</h1>
-	<p>My coursework project deals with measuring factors of the Arabian Sea during the months of January and June. The factors that I have chosen to include in my project are the temperature and the salinity of the sea. I will have to extract, clean and store data obtained in a csv file using Python. I will use Python modules such as pandas to carry out analytics on my data. Furthermore, I will use Plotly graphing libraries to create basic visualisations of my data in the form of graphs; each graph will represent different key aspects of the data. I will use Python data structures such as dictionaries to manage the data I will be analysing. Finally, I will create and develop a web-based interface that provides information on my coursework project and allows individuals to see my data visualisations and interact with the findings of my project.  </p>
+	<p>To aid me with creating this brief I researched and analysed different websites that have interactive informative systems. I looked at different database websites to find my chosen dataset and to simultaneously research on how interactive websites appear. </p>
         <p>I have researched this project by using existing code I wrote in HTML earlier on in the year, I created a website on my favourite pizza. I am using the basic format of this code to create the report website in vscode.dev. I chose to use the flask platform in Thonny to bring my HTML page into my main Python code. I cleaned my data in Python using pandas. This took a few days to get working as the dirty data was not corresponding with the code. After removing the euro sign, my code worked as it had been making the column of integers involve a string. Once the code was free of errors, I then had a cleaned copy of my csv file.</p>
-	<p>I chose Scatter plot: data distribution</p>
+
     </div>
 </body>
 </html>

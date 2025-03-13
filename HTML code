@@ -443,6 +443,8 @@ _________________FOURTH PAGE__________________
             <p>Flowchart created using draw.io</p>
 
             <h2>Algorithm:</h2>
+
+	    <img src="{{url_for('static', filename = 'SDLCC.jpg') }}" width="60%">
         </div>
     </body>
 

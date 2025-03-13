@@ -328,7 +328,11 @@ _________________THIRD PAGE__________________
 	<p>To aid me with creating this brief I researched and analysed different websites that have interactive informative systems. I looked at different database websites to find my chosen dataset and to simultaneously research on how interactive websites appear. I started working on my website using existing HTML code that I had written earlier this year. This website simply used heading tags, hyperlinks and image tags. I used this basic code to start my website and then I added more detail and CSS. While I was searching for a dataset, I was also examining and analysing the database websites to get a feel for how they were structured and how they functioned. Kaggle. For example, I saw the repeated use of a navigation bar which I thought would definitely enhance user experience and make the website more accessible overall. I decided to implement this into my own website along with a contents page. </p>
 	<h2>Research on my dataset/topic</h2>
 	<p>Healthy Corals are the foundation of our ocean’s food chain. Healthy coral reefs contribute to fishing and tourism, providing millions of jobs and contributing to economies all over the world. Scientists develop important drugs from coral reef organisms as treatments for cancer and viruses. But corals are threatened by pollution and climate change. Our human activity causes pollution to increase and climate change to occur quicker. So it is important to protect the coral reefs.</p>
-    </div>
+    	<h2>About the dataset:</h2>
+	<p>My data represents the factors of the Arabian Sea, factors that are healthy for coral reef life. The salinity refers to the practical salinity units of the Arabian Sea water surface. In other words, it can also be defined as the salt concentration of the water. The temperature refers to the temperature of the Arabian Sea water surface in degrees Celsius. The corals present simply refer to whether or not corals are present in the sea. In this case, yes, corals are present in the Arabian Sea.</p>
+	<p>Both the temperature and the salinity are the variables as they were measured in the two months January and June. The temperature and salinity are both a float data type. 
+	The corals present are a constant figure throughout the dataset. They are the boolean data type.</p>
+     </div>
 </body>
 </html>
 _________________FOURTH PAGE__________________
@@ -424,12 +428,19 @@ _________________FOURTH PAGE__________________
     <body>
         <h1>Plan and Design</h1>
 
-	<h2>Description of Design and Meeting the Requirements</h2>
-	<p>For my coursework project, I have extracted a smaller sample of data from a large, raw data file on this topic. I used the systematic sampling extraction method to do this because I could not mix up the different types of data being collected as they all came from different seas. I manually extracted all of my data from the section containing data from the Arabian Sea only. I then used Python to clean the raw dataset, my program removed any uneccessary symbols in cells and entirely removed any empty columns. My program then creates a new, clean csv file which I can then use for the rest of my project. I will then use the Python module pandas to assist me in carrying out analytics on my data; find the mean, median, mode and range of the dataset. I will use Python data structures such as dictionaries to manage the data I will be analysing. Furthermore, I will use Plotly graphing libraries to create visual representations of my data in the form of graphs. I will have a scatter plot to show the data distribution of the salinity and temperature in both January and June. I will then create two separate bar charts dealing with the salinity and tempereature of both months separately. To tie all aspects together, I will create a web-based interface that provides information on my coursework project to the public and presents all of my data visualisations and findings in an interactive mode. </p>
+	<h2>Project Description and Key Feaatures</h2>
+	<p>My goal is to display the factors that affect coral presence in the seas in a visual manner. Hopefully it will be easy for users to understand and to comprehend what the ideal factors of a sea should be like.</p>
+	<p>For my coursework project, I have extracted a smaller sample of data from a large, raw data file on this topic. I used the systematic sampling extraction method to do this because I could not mix up the different types of data being collected as they all came from different seas. I manually extracted all of my data from the section containing data from the Arabian Sea only. 
+	I then used Python to clean the raw dataset, my program removed any unnecessary symbols in cells and entirely removed any empty columns. My program then creates a new, clean csv file which I can then use for the rest of my project. 
+	I will then use the Python module pandas to assist me in carrying out analytics on my data; find the mean, median, mode and range of the dataset. I will use Python data structures such as dictionaries to manage the data I will be analysing. Furthermore, I will use Plotly graphing libraries to create visual representations of my data in the form of graphs. I will have a scatter plot to show the data distribution of the salinity and temperature in both January and June. I will then create two separate bar charts dealing with the salinity and temperature of both months separately. 
+	To tie all of the aspects together, I will create a web-based interface that provides information on my coursework project to the public and presents all of my data visualisations and findings in an interactive mode.
+	</p>
 
 	<h2>Flow Chart:</h2>
 	<img src="{{url_for('static', filename = 'flowchart.jpg') }}" width="60%">
         <p>Flowchart created using draw.io</p>
+
+	<h2>Algorithm:</h2>
        
     </body>
 
@@ -939,6 +950,12 @@ ______________________EIGHTH PAGE______________________
     // Load the table when the page is loaded
     document.addEventListener('DOMContentLoaded', loadTable);
     </script>
+
+    <div class="Container">
+            <h2>Summary Word Count:</h2>
+            <img src="{{url_for('static', filename = 'summary_word.jpg') }}" width="60%">
+
+        </div>
 
 </body>
 </html>

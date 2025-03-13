@@ -90,19 +90,23 @@
 
 
 <body>
-    <h1>Meeting the Brief</h1>
-    <h2>Research:</h2>
-    <p>To aid me with creating this brief I researched and analysed different websites that have interactive informative systems. I looked at different database websites to find my chosen dataset and to simultaneously research on how interactive websites appear. </p>
+    <div class="Container">
+        <h1>Meeting the Brief</h1>
+        <h2>Introduction to my Project:</h2>
+        <p>For my Coursework Project I decided to choose a dataset based on the distribution of coral in numerous seas because I have great interest in marine biology and coral life. I focused primarily on the Arabian Sea as my dataset would be too large if I had used more than one sea. The Arabian sea is in fact the third largest sea in the world. In my dataset, the boolean variable can be seen in the coral column. (screenshot of coral being True) This shows that coral is in fact present in the Arabian Sea. I think that this is relevant to us all in a round-about way; the factors that determine the presence or absence of corals are controlled by human activity. If we learn  more about these factors, maybe we can prevent the death of coral reefs in the future.</p>
+        <p>The main goal of my project is to analyse the factors that can affect the distribution of corals in the Arabian Sea. Seeing as corals are present and thriving in this environment, the factors of the Arabian Sea can be copied and possibly implemented into other seas. This may be done by reducing pollution and slowing down the rate of climate change. Overall, my project may assist in indicating what humanity can do to save coral reefs ecosystem.</p>
+    
 
-    <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
-    <div>{{ scatter_plot_html | safe }}</div>
-        
-    <h4>Bar Chart: Temperature in January and June</h4>
-    <div>{{ temp_barchart_html | safe }}</div>
+        <h3>Graphs:</h3>
+        <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
+        <div>{{ scatter_plot_html | safe }}</div>
+            
+        <h4>Bar Chart: Temperature in January and June</h4>
+        <div>{{ temp_barchart_html | safe }}</div>
 
-    <h4>Bar Chart: Salinity in January and June</h4>
-    <div>{{ salinity_barchart_html | safe }}</div>
-
+        <h4>Bar Chart: Salinity in January and June</h4>
+        <div>{{ salinity_barchart_html | safe }}</div>
+    </div>
 
 
 </body>

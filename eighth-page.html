@@ -6,6 +6,26 @@
     <title>Eighth Page: Suggestion Form</title>
 
     <style>
+
+
+        .topnav {
+            overflow: hidden;
+            background-color: #063800;
+        }
+                
+        .topnav a {
+            float: left;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #1700eb;
+            color: black;
+        }
+
         h1 {
             text-align: center;
             text-decoration:underline;
@@ -63,6 +83,18 @@
 
 </head>
 <body>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/second-page">Meeting The Brief</a>
+        <a href="/third-page">Investivation</a>
+        <a href="/fourth-page">Plan and Design</a>
+        <a href="/fifth-page">Create</a>
+        <a href="/sixth-page">Evaluation</a>
+        <a href="/seventh-page">References</a>
+        <a href="/eighth-page">Suggestions Form!</a>
+    
+    </div>
 
     <div class="container">
     <h1>Welcome to Page Eight!</h1>
@@ -172,7 +204,7 @@
 
 <div class="Container">
     <h2>Summary Word Count:</h2>
-    <img src="{{url_for('static', filename = 'summary_word.jpg') }}" width="60%">
+    <img src="{{url_for('static', filename = 'summary_words.jpg') }}" width="90%">
 
 </div>
 

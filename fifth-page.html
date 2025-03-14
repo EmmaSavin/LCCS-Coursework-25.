@@ -6,6 +6,25 @@
         <title>Fifth Page: Create</title>
 
         <style>
+
+            .topnav {
+                overflow: hidden;
+                background-color: #063800;
+            }
+                    
+            .topnav a {
+                float: left;
+                display: block;
+                color: #FFFFFF;
+                text-align: center;
+                padding: 15px 15px;
+                text-decoration: none;
+            }
+            .topnav a:hover {
+                background-color: #1700eb;
+                color: black;
+            }
+
             h1 {
                 text-align: center;
                 text-decoration:underline;
@@ -97,23 +116,32 @@
 
 
     <body>
+
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/second-page">Meeting The Brief</a>
+            <a href="/third-page">Investivation</a>
+            <a href="/fourth-page">Plan and Design</a>
+            <a href="/fifth-page">Create</a>
+            <a href="/sixth-page">Evaluation</a>
+            <a href="/seventh-page">References</a>
+            <a href="/eighth-page">Suggestions Form!</a>
+
+        </div>
+
         <div class="Container">
             <h1>Create</h1>
     
             <h2></h2>
     
             <h2>Test Plan and Log:</h2>
-            <img src="{{url_for('static', filename = 'testplan_log.jpg') }}" width="60%">
+            <img src="{{url_for('static', filename = 'testplan_log.jpg') }}" width="100%">
 
             <h2>Data Statistics Summary:</h2>
-            <img src="{{url_for('static', filename = 'data_stats.jpg') }}" width="60%">
+            <img src="{{url_for('static', filename = 'data_stats.jpg') }}" width="90%">
 
         </div>
        
     </body>
 
-
-
-
 </html>
-

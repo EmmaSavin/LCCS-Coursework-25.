@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Home Page</title>
+
+       <style>
+
+
+        .topnav {
+            overflow: hidden;
+            background-color: #120776;
+        }
+                
+        .topnav a {
+            float: left;
+            display: block;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #1700eb;
+            color: black;
+        }
+       
+    
+         h1 {
+             text-align: center;
+             text-decoration:underline;
+             font-size: 55px;
+             color: #F7EDE8;
+	     font-family: Georgia, 'Times New Roman', Times, serif;
+         }
+ 
+         h2 {
+             text-align: center;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+
+         h3 {
+             text-align: left;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+
+         p{
+             text-align: center;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+ 
+         img{
+             margin: 0 auto;
+             display: block;
+             max-width: 100%;
+             border-radius: 10px;
+         }
+         p{
+             color: #F7EDE8;
+             line-height: 30px;
+         }
+ 
+         .Container{
+             max-width: 600px;
+             margin:0 auto;
+             padding: 15px 60px;
+             background-color: rgb(16, 7, 66);
+             text-decoration: #F7EDE8;
+             border: rgb(0, 0, 0);
+             border-radius: 30px;
+             color: #F7EDE8;
+         } 
+         body{
+             background-color:rgb(18, 2, 44);
+         }
+         button {
+             color: rgba(132, 189, 208, 0.897);
+             background-color: rgb(9, 20, 103);
+             line-height: 20px;
+             box-shadow: rgba(110, 113, 209, 0.386) 0px 8px 8px 0;
+             transition: all 200ms ease;
+         }
+ 
+         button:hover{
+             color: rgb(42, 209, 255);
+             background-color: rgb(96, 87, 178);
+             cursor: pointer;
+         }
+         strong{
+             color: rgb(252, 252, 252);
+         }
+
+         .Container ol {
+            list-style-position: inside;  
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .Container li {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px; 
+        }
+
+     </style>
+    </head>
+
+
+    <body>
+
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/second-page">Meeting The Brief</a>
+            <a href="/third-page">Investivation</a>
+            <a href="/fourth-page">Plan and Design</a>
+            <a href="/fifth-page">Create</a>
+            <a href="/sixth-page">Evaluation</a>
+            <a href="/seventh-page">References</a>
+            <a href="/eighth-page">Suggestions Form!</a>
+
+        </div>
+    
+
+        <h1>Coursework Project 2025</h1>
+        <h2>Leaving Cert Computer Science</h2>
+        <p><b>Exam Number: 206198</b></p>
+        <p>My coursework project is on: {{cwinfo}}</p>
+
+      <div class="Container">
+        <h3><i>CONTENTS:</i></h3>
+        <ol>
+         <li><!--Link to meeting the brief-->
+            <a href = "second-page"><button>Meeting the Brief</button></a></li>
+         <li><!--Link to investigation-->
+            <a href = "third-page"><button>Investigation</button></a></li>
+         <li><!--Link to Plan and Design-->
+            <a href = "fourth-page"><button>Plan and Design</button></a></li>
+         <li><!--Link to create-->
+            <a href = "fifth-page"><button>Create</button></a></li>
+         <li><!--Link to evaluation-->
+            <a href = "sixth-page"><button>Evaluation</button></a></li>
+         <li><!--Link to references-->
+            <a href = "seventh-page"><button>References</button></a></li>
+         <li><!--Link to eighth page-->
+            <a href = "eighth-page"><button>Suggestions Form!</button></a></li>
+        </ol>
+      </div>
+
+
+    </body>
+
+
+</html>

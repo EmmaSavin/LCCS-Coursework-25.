@@ -120,6 +120,9 @@ from flask import Flask, render_template #Added the render_template library
 #Lets flask know this is the main program
 app = Flask(__name__)
 
+
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 #The home page of the website is ('/').
 @app.route('/')
 def home():
@@ -171,4 +174,5 @@ def eighth_page():
 # Run the app (this starts the server)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5022, debug=False)
+    
 

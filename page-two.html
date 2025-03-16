@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Two</title>
+
+    <style>
+
+.topnav {
+            overflow: hidden;
+            background-color: #edff85;
+        }
+                
+        .topnav a {
+            float: left;
+            display: block;
+            color: #070707;
+            text-align: center;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            background-color: #db64ff;
+            color: black;
+        }
+       
+    
+         h1 {
+             text-align: center;
+             text-decoration:underline;
+             font-size: 55px;
+             color: #F7EDE8;
+	     font-family: Georgia, 'Times New Roman', Times, serif;
+         }
+ 
+         h2 {
+             text-align: center;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+
+         h3 {
+             text-align: left;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+
+         p{
+             text-align: center;
+             font-weight: lighter;
+             color: #F7EDE8;
+         }
+ 
+         img{
+             margin: 0 auto;
+             display: block;
+             max-width: 100%;
+             border-radius: 10px;
+         }
+         p{
+             color: #F7EDE8;
+             line-height: 30px;
+         }
+ 
+         .Container{
+             max-width: 600px;
+             margin:0 auto;
+             padding: 15px 60px;
+             background-color: rgb(141, 70, 143);
+             text-decoration: #F7EDE8;
+             border: rgb(0, 0, 0);
+             border-radius: 30px;
+             color: #F7EDE8;
+         } 
+         body{
+             background-color:rgb(85, 2, 101);
+         }
+         button {
+             color: rgba(3, 3, 3, 0.897);
+             background-color: rgb(255, 253, 126);
+             line-height: 20px;
+             box-shadow: rgba(255, 9, 181, 0.386) 0px 8px 8px 0;
+             transition: all 200ms ease;
+         }
+ 
+         button:hover{
+             color: rgb(117, 5, 93);
+             background-color: rgb(96, 87, 178);
+             cursor: pointer;
+         }
+         strong{
+             color: rgb(252, 252, 252);
+         }
+
+         .Container ol {
+            list-style-position: inside;  
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .Container li {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px; 
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/page-two">Page Two</a>
+        <a href="/page-three">Page Three</a>
+    </div>
+
+    <div class="Container">
+        <h1>Data Visualisation:</h1>
+        <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
+        <div>{{ scatter_plot_html | safe }}</div>
+            
+        <h4>Bar Chart: Temperature in January and June</h4>
+        <div>{{ temp_barchart_html | safe }}</div>
+
+        <h4>Bar Chart: Salinity in January and June</h4>
+        <div>{{ salinity_barchart_html | safe }}</div>
+    </div>
+
+
+</body>
+
+</html>

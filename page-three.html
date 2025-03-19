@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Three</title>
+    <title>Recommendations</title>
 
     <style>
-
 
 .topnav {
             overflow: hidden;
@@ -30,13 +29,13 @@
          h1 {
              text-align: center;
              text-decoration:underline;
-             font-size: 55px;
+             font-size: 40px;
              color: #F7EDE8;
 	         font-family: Georgia, 'Times New Roman', Times, serif;
          }
  
          h2 {
-             text-align: center;
+             text-align: left;
              font-weight: lighter;
              color: #F7EDE8;
          }
@@ -62,12 +61,13 @@
          p{
              color: #F7EDE8;
              line-height: 30px;
+             text-align: left;
          }
  
          .Container{
              max-width: 600px;
              margin:0 auto;
-             padding: 15px 60px;
+             padding: 10px 100px;
              background-color: rgb(141, 70, 143);
              text-decoration: #F7EDE8;
              border: rgb(0, 0, 0);
@@ -109,124 +109,30 @@
     </style>
 
 </head>
+
+
 <body>
 
     <div class="topnav">
         <a href="/">Home</a>
-        <a href="/page-two">Page Two</a>
-        <a href="/page-three">Page Three</a>
+        <a href="/page-two">Survey</a>
+        <a href="/page-three">Recommendations</a>
     </div>
 
-<div class="container">
-    <h1>Welcome to Page Three!</h1>
+    <div class="Container">
+       <h1>Welcome to Page Three - Recommendations</h1>
 
-    <form id="suggestions-form">
-       
-        <label for="Data">What other data should be added to this website? (Type a string)</label><br>
-        <input type="text" id="Data" required><br><br>
-       
-        <label for="Month">What other month should this data come from? (Type an integer; 1-12 (Jan-Dec) )</label><br>
-        <input type="Number" id="Month" min="1" max="12" required><br><br>
-       
-        <label for="Reliability">What would you rate this data for reliability? (Type a float; 0-10 )</label><br>
-        <input type="Number" id="Reliability" step="0.1" min="1.0" max="10.0" required><br><br>
-       
-        <label for="Opinion">Do you like this webpage?</label><br>
-        <select id="Opinion" required>
-            <option value="">Select Boolean Value</option>
-            <option value="Y">True</option>
-            <option value="N">False</option>
-        </select><br><br>
-       
-        <button type="button" onclick="saveData()">Submit</button>
-        <button type="button" onclick="clearData()">Delete past data</button>
-    </form>
-    <br>
-    <h2>Summary of Submitted Suggestions:</h2>
-   
-    <table id="data-table">
-        <thead>
-            <tr>
-                <th>Data</th>
-                <th>Month</th>
-                <th>Reliability</th>
-                <th>Opinion</th>
-            </tr>
-        </thead>
-       
-        <tbody>
-        </tbody>
-    </table>
-   
+       <h2>Based on the averages of the January Temperature I recommend that...</h2>
+       <p>If you like swimming in cooler waters, you should swim in the Arabian Sea in the month of January. The average temperature of the water is 26.7 degrees ceclius! If you prefer warmer waters, I'd recommend that you swim in the Arabian Sea during the month of June.</p>
+       <h2>Based on the averages of the June Temperature I recommend that...</h2>
+       <p>If you like swimming in warmer waters, you should swim in the Arabian Sea in the month of June. The average temperature is 29.8 degrees ceclius! If you prefer cooler waters, I'd recommend that you swim in the Arabian Sea during the month of January.</p>
+       <h2>Based on the averages of the January Salinity levels I recommend that...</h2>
+       <p>If you have sensitive eyes, you should swim in the Arabian Sea in the month of January. The average salinity level is 36.2 salinity units! If you are sensitive to salt stinging your eyes, I'd recommend that you swim in the Arabian Sea during the month of January and not June.</p>
+       <h2>Based on the averages of the June Salinity levels I recommend that...</h2>
+       <p>If you have sensitive eyes, you should swim in the Arabian Sea in the month of January rather than June. The average salinity level in June is 37.7 salinity units, this is relatively higher than in January! If you are sensitive to salt stinging your eyes, I'd recommend that you swim in the Arabian Sea during the month of January and not June. However, if you are insensitive to a bit of salt in your eyes, either January or June would be a great time for a swim...unless you have a temperature preference! </p>
     </div>
-   
-    <script>
-    function saveData() {
-        const Data = document.getElementById('Data').value;
-        const Month = document.getElementById('Month').value; 
-        const Reliability = document.getElementById('Reliability').value; 
-        const Opinion = document.getElementById('Opinion').value; 
 
-        if (!Data || !Month || !Reliability || !Opinion) {
-            alert("Please fill in all fields!");
-            return;
-        }
-
-        const newData = { Data, Month, Reliability, Opinion };
-
-        // Retrieve existing suggestions from localStorage, or initialize an empty array if none exists
-        const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
-       
-        // Add the new suggestion to the array
-        suggestions.push(newData);
-
-        // Save the updated suggestions array back to localStorage
-        localStorage.setItem('suggestions', JSON.stringify(suggestions));
-
-        // Reload the table to display the updated suggestions
-        loadTable();
-    }
-
-    function loadTable() {
-        const tableBody = document.querySelector('#data-table tbody'); // Fix: Corrected the table body selector
-       
-        // Clear existing rows
-        tableBody.innerHTML = '';
-
-        // Retrieve suggestions from localStorage
-        const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
-
-        // Loop through each suggestion and add it as a row in the table
-        suggestions.forEach(item => {
-            const row = document.createElement('tr'); // Fix: Corrected 'document.creatELement' to 'document.createElement'
-
-            row.innerHTML = `
-                <td>${item.Data}</td>
-                <td>${item.Month}</td> 
-                <td>${item.Reliability}</td>
-                <td>${item.Opinion === 'Y' ? 'True' : 'False'}</td> 
-            `;
-
-            // Append the row to the table body
-            tableBody.appendChild(row);
-        });
-    }
-
-    function clearData() {
-        if (confirm("Are you sure you want to clear data?")) {
-            localStorage.removeItem('suggestions');
-            loadTable();
-        }
-    }
-
-    // Load the table when the page is loaded
-    document.addEventListener('DOMContentLoaded', loadTable);
-    </script>
-
-<div class="Container">
-    
-
-</div>
 
 </body>
+
 </html>

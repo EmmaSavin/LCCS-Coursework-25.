@@ -60,7 +60,7 @@ scatter_plot_fig = go.Figure(
     ),
 )
 
-scatter_plot_fig.show()
+#scatter_plot_fig.show()
 scatter_plot_html = scatter_plot_fig.to_html(full_html=False, include_plotlyjs="cdn")
 
 ###############Bar Chart for temp##############
@@ -84,7 +84,7 @@ temp_barchart_fig.update_layout(
     )
 )
 
-temp_barchart_fig.show()
+#temp_barchart_fig.show()
 temp_barchart_html = temp_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
 
 ###############Bar Chart for salinity##############
@@ -107,7 +107,7 @@ salinity_barchart_fig.update_layout(
     )
 )
 
-salinity_barchart_fig.show()
+#salinity_barchart_fig.show()
 salinity_barchart_html = salinity_barchart_fig.to_html(full_html=False, include_plotlyjs="cdn")
 
 
@@ -123,24 +123,24 @@ app = Flask(__name__)
 #The home page of the website is ('/').
 @app.route('/')
 def home():
-    #define variables
-    cwinfo = "The salinity and temperature of the Arabian Sea in January versus June."
-    
-    #pass these onto the webpage (with a chance to rename them)
-    return render_template("index.html", cwinfo=cwinfo)
+    return render_template("index.html", scatter_plot_html=scatter_plot_html,
+                           temp_barchart_html=temp_barchart_html,
+                           salinity_barchart_html=salinity_barchart_html)
 
 #Route for second page
 @app.route('/page-two')
 def page_two():
-    return render_template("page-two.html",
-                           scatter_plot_html=scatter_plot_html,
-                           temp_barchart_html=temp_barchart_html,
-                           salinity_barchart_html=salinity_barchart_html)
+    return render_template("page-two.html")
 
 #Route for third page
 @app.route('/page-three')
 def page_three():
     return render_template("page-three.html")
+
+#Route for third page
+@app.route('/test')
+def test():
+    return render_template("test.html")
 
 
 # Run the app (this starts the server)

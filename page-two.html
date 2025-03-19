@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Two</title>
+    <title>Survey</title>
 
     <style>
 
-.topnav {
+
+        .topnav {
             overflow: hidden;
             background-color: #edff85;
         }
@@ -29,13 +30,13 @@
          h1 {
              text-align: center;
              text-decoration:underline;
-             font-size: 55px;
+             font-size: 40px;
              color: #F7EDE8;
-	     font-family: Georgia, 'Times New Roman', Times, serif;
+	         font-family: Georgia, 'Times New Roman', Times, serif;
          }
  
          h2 {
-             text-align: center;
+             text-align: left;
              font-weight: lighter;
              color: #F7EDE8;
          }
@@ -66,15 +67,18 @@
          .Container{
              max-width: 600px;
              margin:0 auto;
-             padding: 15px 60px;
-             background-color: rgb(141, 70, 143);
+             padding: 10px 100px;
+             background-color:transparent;
              text-decoration: #F7EDE8;
              border: rgb(0, 0, 0);
              border-radius: 30px;
              color: #F7EDE8;
+             min-height: 100vh;
+             box-sizing: border-box;
          } 
          body{
              background-color:rgb(85, 2, 101);
+             color:#f2f2f2
          }
          button {
              color: rgba(3, 3, 3, 0.897);
@@ -105,32 +109,140 @@
             margin-bottom: 20px; 
         }
 
+        table {
+                border-collapse: collapse;
+                width: 50%;
+        }
+        th, td {
+                text-align: center;
+                padding: 8px;
+        }
+        tr:nth-child(even){background-color: #4a0e5c}
+        th {
+                background-color: #d590f0;
+                color: white;
+        }
+
     </style>
 
 </head>
-
-
 <body>
 
     <div class="topnav">
         <a href="/">Home</a>
-        <a href="/page-two">Page Two</a>
-        <a href="/page-three">Page Three</a>
+        <a href="/page-two">Survey</a>
+        <a href="/page-three">Recommendations</a>
     </div>
 
-    <div class="Container">
-        <h1>Data Visualisation:</h1>
-        <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
-        <div>{{ scatter_plot_html | safe }}</div>
-            
-        <h4>Bar Chart: Temperature in January and June</h4>
-        <div>{{ temp_barchart_html | safe }}</div>
+<div class="container">
+    <h1>Welcome to Page Two - Survey</h1>
 
-        <h4>Bar Chart: Salinity in January and June</h4>
-        <div>{{ salinity_barchart_html | safe }}</div>
+    <form id="suggestions-form">
+        <input type="hidden"  id="date_input">
+        <label for="Month">What other month do you think this data should come from? (Feb-Dec)</label><br>
+        <select id="Month" id="Month"  required>
+        <option value="">Select a Month</option>
+        <option value="Feb">Feb</option>
+        <option value="Mar">Mar</option>
+        <option value="Apr">Apr</option>
+        <option value="May">May</option>
+        <option value="Jul">Jul</option>
+        <option value="Aug">Aug</option>
+        <option value="Sept">Sept</option>
+        <option value="Oct">Oct</option>
+        <option value="Nov">Nov</option>
+        <option value="Dec">Dec</option>
+        </select>
+        <br><br>
+        <label for="Reliability">On a scale of 1-10, what would you rate this data for reliability?</label><br>
+        <input type="Number" id="Reliability" step="0.1" min="1.0" max="10.0" required>
+        <br><br>
+        <label for="Opinion">Do you like this webpage?</label><br>
+        <select id="Opinion" required>
+            <option value="">Select Boolean Value</option>
+            <option value="Y">Yes</option>
+            <option value="N">No</option>
+        </select><br><br>
+        <label for="Feedback">Do you have any feedback or suggestions on this webpage?</label><br>
+        <input type="text" id="Feedback" required>
+        <br><br>
+        <button type="submit" onclick="saveData()">Submit</button>
+        <button type="button" onclick="clearData()">Delete past data</button>
+    </form>
+    <br>
+    <h2>Summary of Submitted Suggestions:</h2>
+   
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>MONTH</th>
+                <th>RELIABILITY</th>
+                <th>OPINION</th>
+                <th>FEEDBACK</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+        </tbody>
+    </table>
+   
     </div>
+   
+    <script>
+    function saveData() {
+        const Month = document.getElementById('Month').value;
+        const Reliability = document.getElementById('Reliability').value; 
+        const Opinion = document.getElementById('Opinion').value; 
+        const Feedback = document.getElementById('Feedback').value; 
 
+        if (!Month || !Reliability || !Opinion ||!Feedback ) {
+            alert("Please fill in all fields!");
+            return;
+        }
+
+        const newData = { Month, Reliability, Opinion, Feedback };
+
+        const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
+       
+        suggestions.push(newData);
+
+        localStorage.setItem('suggestions', JSON.stringify(suggestions));
+
+        loadTable();
+    }
+
+    function loadTable() {
+        const tableBody = document.querySelector('#data-table tbody'); 
+        tableBody.innerHTML = '';
+        const suggestions = JSON.parse(localStorage.getItem('suggestions') || '[]');
+        suggestions.forEach(item => {
+            const row = document.createElement('tr'); // Fix: Corrected 'document.creatELement' to 'document.createElement'
+
+            row.innerHTML = `
+                <td>${item.Month}</td> 
+                <td>${item.Reliability}</td>
+                <td>${item.Opinion === 'Y' ? 'True' : 'False'}</td>
+                <td>${item.Feedback}</td> 
+            `;
+
+            // Append the row to the table body
+            tableBody.appendChild(row);
+        });
+    }
+
+    function clearData() {
+        if (confirm("Are you sure you want to clear data?")) {
+            localStorage.removeItem('suggestions');
+            loadTable();
+        }
+    }
+    document.addEventListener('DOMContentLoaded', loadTable);
+    </script>
+
+<div class="Container">
+    
+
+</div>
 
 </body>
-
 </html>

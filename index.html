@@ -30,9 +30,9 @@
          h1 {
              text-align: center;
              text-decoration:underline;
-             font-size: 55px;
+             font-size: 40px;
              color: #F7EDE8;
-	     font-family: Georgia, 'Times New Roman', Times, serif;
+	         font-family: Georgia, 'Times New Roman', Times, serif;
          }
  
          h2 {
@@ -48,7 +48,7 @@
          }
 
          p{
-             text-align: center;
+             text-align: left;
              font-weight: lighter;
              color: #F7EDE8;
          }
@@ -67,7 +67,7 @@
          .Container{
              max-width: 600px;
              margin:0 auto;
-             padding: 15px 60px;
+             padding: 10px 100px;
              background-color: rgb(141, 70, 143);
              text-decoration: #F7EDE8;
              border: rgb(0, 0, 0);
@@ -94,16 +94,14 @@
              color: rgb(252, 252, 252);
          }
 
-         .Container ol {
-            list-style-position: inside;  
-            padding-left: 0;
-            margin: 0;
+         .Container ul {
+            list-style-type: disc;  
+            padding-left: 20px;
         }
 
-        .Container li {
-            display: flex; 
+        .Container li { 
             align-items: center; 
-            margin-bottom: 20px; 
+            margin-bottom: 10px; 
         }
 
      </style>
@@ -114,23 +112,43 @@
 
         <div class="topnav">
             <a href="/">Home</a>
-            <a href="/page-two">Page Two</a>
-            <a href="/page-three">Page Three</a>
+            <a href="/page-two">Survey</a>
+            <a href="/page-three">Recommendations</a>
         </div>
     
 
-        <h1>The Arabian Sea</h1>
-        <h2>Why is it a great home for coral?!</h2>
+        <h1>Factors Affecting Coral Presence in the Arabian Sea</h1>
 
-      <div class="Container">
-        <h2>Introduction:</h2>
-        <p>Healthy Corals are the foundation of our oceans food chain. Healthy coral reefs contribute to fishing and tourism, providing millions of jobs and contributing to economies all over the world. Scientists develop important drugs from coral reef organisms as treatments for cancer and viruses. However, corals are threatened by pollution and climate change. Our human activity causes pollution levels to increase and climate change to occur quicker. It is gravely important to protect the coral reefs.</p>
-        <p>This shows that coral is in fact present in the Arabian Sea. I think that this is relevant to us all in a round-about way; the factors that determine the presence or absence of corals are controlled by human activity. If we learn  more about these factors, maybe we can prevent the death of coral reefs in the future.
+        <div class="Container">
+            <h2>Introduction</h2>
+            <h3><u>About Corals</u></h3>
+            <ul>
+                <li>Corals are the foundation of our oceans food chain.</li> 
+                <li>Healthy coral reefs contribute to fishing and tourism, providing millions of jobs and contributing to economies all over the world.</li>
+                <li>Scientists develop important drugs from coral reef organisms as treatments for cancer and viruses.</li> 
+                <li>Corals are threatened by pollution and climate change.</li>
+            </ul>
 
-            The main goal of my project is to analyse the factors that can affect the distribution of corals in the Arabian Sea. Seeing as corals are present and thriving in this environment, the factors of the Arabian Sea can be copied and possibly implemented into other seas. This may be done by reducing pollution and slowing down the rate of climate change. Overall, my project may assist in indicating what humanity can do to save coral reefs ecosystem.
-        </p>
+            <p>My website will analyse the factors that can affect the distribution of corals in sea. Factors that determine the presence or absence of corals are controlled by human activity. Our human activity causes pollution levels to increase and climate change to occur quicker.</p>
+            <p>Seeing as corals are present and thriving in the Arabian Sea, the factors of the environment can be copied and possibly implemented into other seas. This may be done by reducing pollution and slowing down the rate of climate change. Hopefully, my website will assist in indicating what humanity can do to save coral reefs ecosystem. Together, maybe we can prevent the death of coral reefs in the future.</p>
+        
+            <h1>Summary Statistics on Salinity and Temperature of the Arabian Sea in January and June</h1>
+            <img src="{{url_for('static', filename = 'data_stats.jpg') }}" width="100%">
 
-      </div>
+            <h1>Interactive Graphs:</h1>
+            <h4>Scatter Plot: Salinity and Temperature in January and June</h4>
+            <div>{{ scatter_plot_html | safe }}</div>
+            <p>This scatter plot shows the data distribution of all data points in this dataset. It shows that the salinity and temperature factors are generally higher in June in comparison to January.</p>
+                
+            <h4>Bar Chart: Temperature in January and June</h4>
+            <div>{{ temp_barchart_html | safe }}</div>
+            <p>This bar chart shows the temperatures of the Arabian Sea in the months of January and June. It can be seen clearly that the temperatures are higher in June. This is expected as the terrestrial temperatures also tend to be higher during the summer month of June. From January to June, the temperature increases by approximately 3 degrees Celcius. </p>
+    
+            <h4>Bar Chart: Salinity in January and June</h4>
+            <div>{{ salinity_barchart_html | safe }}</div>
+            <p>This bar chart shows the salinity of the Arabian Sea in the months of January and June. It can be seen that the salinity levels are also higher in June. From this we can gather that saltier seas yield warmer temperatures. The salinity in January approximately increases by 2 salinity units to reach June's salinity levels.</p>
+        </div>
+
 
     </body>
 
